@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>ECGBerry</title>
+    <meta charset="utf-8"/>
+    <script src="dygraph.min.js"></script>
+    <link rel="stylesheet" href="dygraph.css" />
+    <link rel="stylesheet" href="ecgberry.css" />
+    <script src="ecgberry.js"></script>
+</head>
+<h1>ECGBerry Web Front End</h1>
+<div id="divstatus">
+    Status: <span id="divnumclients">not connected to the ECG</span>
+    <button type="button" id="btnconnect" onclick="connect()" title="connects to the ecg">CONNECT</button>
+</div>
+<div id="divcmdelements">
+    <button type="button" id="btnstartthree" onclick="btnstartthreeclick()" title="starts the 3-lead ecg" disabled>Start 3-Lead ECG</button>
+    <button type="button" id="btnstartfive" onclick="btnstartfiveclick()" title="starts the 5-lead ecg" disabled>Start 5-Lead ECG</button>
+    <button type="button" id="btnstop" onclick="btnstopclick()" title="stops the ecg" disabled>Stop</button>
+    Pause: <span title="This does not pause the ECG, but just stops your browser from displaying new data."><input type="checkbox" id="chbxpause" value="pause" onclick="chbxpauseclick()"></span>
+    max FPS: <input type="number" id="inptfps" name="fps" min="1" max="60" oninput="inptfpsinput()" value="5" style="width:3em">
+    graph length (s): <input type="number" id="inptduration" name="duration" min="1" max="10" oninput="inptdurationinput()" value="5" style="width:3em">
+</div>
+<div><button type="button" id="btndiagnose" onclick="btndiagnoseclick()" title="Start a 6-second Diagnose" disabled>Diagnose</button></div>
+<div id="divdiagnose"></div>
+<div id="divecg2container">
+    <span id="specg2label" class="label">Lead II</span>
+    <div id="divecg2" class="ecg">ECG Graph II should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg1container">
+    <span id="specg1label" class="label">Lead I</span>
+    <span class="ghost"><input type="checkbox" id="chbxecg1display" value="chbxecg1display" onclick="chbxecg1displayclick()" checked="true">display</span>
+    <div id="divecg1" class="ecg">ECG Graph I should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg3container">
+    <span id="specg3label" class="label">Lead V</span>
+    <div id="divecg3" class="ecg">ECG Graph V should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg4container" class="ghost">
+    <span id="specg4label" class="label">coeffs1</span>
+    <div id="divecg4" class="ecg">ECG Graph III should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg5container" class="ghost">
+    <span id="specg5label" class="label">coeffs2</span>
+    <div id="divecg5" class="ecg">ECG Graph III should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg6container" class="ghost">
+    <span id="specg6label" class="label">coeffs3</span>
+    <div id="divecg6" class="ecg">ECG Graph III should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+<div id="divecg7container" class="ghost">
+    <span id="specg7label" class="label">coeffs4</span>
+    <div id="divecg7" class="ecg">ECG Graph III should be displayed here. If you can see this, you probably should enable javascript.</div>
+</div>
+
